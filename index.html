@@ -1,6 +1,49 @@
-<html>
-  <body>
-    <h1>Garden Camera</h1>
-    <p>Page is setting up…</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeff's Garden Camera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="60">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    #image-container {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 95%;
+      border: 4px solid #333;
+      border-radius: 6px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+    .timestamp {
+      margin-top: 10px;
+      color: #555;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Jeff's Garden — Latest Image</h1>
+  <p>Auto‑refreshes every 60 seconds</p>
+
+  <div id="image-container">
+    <img id="garden" src="latest.jpg?ts=<?= time() ?>" alt="Latest Garden Image">
+  </div>
+
+  <div class="timestamp">
+    Last updated: <script>document.write(new Date().toLocaleString());</script>
+  </div>
+</body>
 </html>
